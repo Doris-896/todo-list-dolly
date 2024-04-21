@@ -16,26 +16,31 @@ export default function Home() {
           width: 700,
           height: 1000,
           borderRadius: 3,
-          bgcolor: "#ffffff", //phải để trong string
-          display: "flex", //phải để trong string
-          justifyContent: "center", //phải để trong string
-          alignItems: "center", //phải để trong string
+          bgcolor: "#ffffff", 
+          display: "flex", 
+          justifyContent: "center", 
+          alignItems: "center", 
           flexDirection: "column",
+          justifyContent: "flex-start", // Align content to the top
+          alignItems: "flex-start", // Align items to the left
+          padding: "50px", // Add padding for space
         }}
       >
-        <h1 className="font-sans font-bold text-6xl my-4">Todo App</h1>
+        <h1 className="font-sans font-bold text-6xl my-6">Todo App</h1>
 
-        <div className="flex-row my-4">
-          <TextField id="Add your new todo" label="Add your new todo" flex />
+        <div className="flex-row my-4 flex">
+          <TextField id="Add your new todo" label="Add your new todo" size-full/>
           <Fab
             color="primary"
             size="medium"
             aria-label="add"
-            style={{ backgroundColor: "#ba68c8", color: "#fff" }}
+            style={{ backgroundColor: "#ba68c8", color: "#fff", width: "100%", borderRadius: 0}}
+            size-full
           >
             <AddIcon />
           </Fab>
         </div>
+
 
         <div>
           <div className="flex-row my-1">
@@ -52,29 +57,7 @@ export default function Home() {
             </Fab>
           </div>
 
-          <div className="flex-row my-1">
-            <TextField id="Add your new todo" label="Add your new todo" flex />
-            <Fab
-              color="primary"
-              size="medium"
-              aria-label="add"
-              style={{ backgroundColor: "#ba68c8", color: "#fff" }}
-            >
-              <AddIcon />
-            </Fab>
-          </div>
-
-          <div className="flex-row my-1">
-            <TextField id="Add your new todo" label="Add your new todo" flex />
-            <Fab
-              color="primary"
-              size="medium"
-              aria-label="add"
-              style={{ backgroundColor: "#ba68c8", color: "#fff" }}
-            >
-              <AddIcon />
-            </Fab>
-          </div>
+         
 
           <div className="flex-row my-1">
             <TextField id="Add your new todo" label="Add your new todo" flex />

@@ -17,7 +17,7 @@ export default function Home() {
 
         <Box className="my-4 flex min-w-full">
           <TextField
-            id="Add your new todo"
+            placeholder="Add your new todo"
             className="w-full mr-2 font-sans font-normal text-2xl rounded-md"  
           />
           <Fab

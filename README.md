@@ -1,7 +1,7 @@
 * Technology used:
 1. Material UI Libs: https://mui.com/material-ui/all-components/
 2. Tailwind CSS: https://tailwindcss.com/docs/installation
-
+--------------------------------------
 
 1. Checkout new branch from main: git checkout -b feat/{your-work}. For example: `git checkout -b feat/add-input`
 2. Add file changes: `git add .` or `git add {file path}`

@@ -12,3 +12,5 @@
 7. `cthanh2310` review. 
  - In case you got approved and merged, when you implement new task: stand in `main` branch and pull newest code change from `main` branch (`git pull origin main --no-ff`) and checkout from main (back to step 1)
  - In case you got some comments from `cthanh2310`, you must resolve and fix them (back to step 2), push the change and ping `cthanh2310` to review again until you get the approval from him
+
+Note: Coppy in terminal using `ctrl + shift + c`

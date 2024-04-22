@@ -14,3 +14,4 @@
  - In case you got some comments from `cthanh2310`, you must resolve and fix them (back to step 2), push the change and ping `cthanh2310` to review again until you get the approval from him
 
 Note: Coppy in terminal using `ctrl + shift + c`
+Switch branch: `git checkout {branch-name}`: For example -> `git checkout main`

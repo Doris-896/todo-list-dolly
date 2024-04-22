@@ -2,7 +2,7 @@
 1. Material UI Libs: https://mui.com/material-ui/all-components/
 2. Tailwind CSS: https://tailwindcss.com/docs/installation
 
-
+Standard flow:
 1. Checkout new branch from main: git checkout -b feat/{your-work}. For example: `git checkout -b feat/add-input`
 2. Add file changes: `git add .` or `git add {file path}`
 3. Commit: `git commit -m {commit message}`. For example: `git commit -m "Optimize code base"`
@@ -17,3 +17,8 @@ Note: Coppy in terminal using `ctrl + shift + c`
 Switch branch: `git checkout {branch-name}`: For example -> `git checkout main`
 
 branch flow: develop -> staging -> main
+
+When you're in company:
+1. `git fetch --all` -> fetching all the changes from remote git to local.
+2. `git checkout feat/add-input` -> checkout to target branch.
+3. Now you're standing in the branch `git checkout feat/add-input`. Follow the step 2 in the standard flow above to continue developing code base.

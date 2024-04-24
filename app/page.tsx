@@ -11,48 +11,62 @@ export default function Home() {
     <main className="w-full h-full flex justify-center items-center ">
       {/*Tại sao chỗ này bỏ flex thì ô sẽ kéo dài hết chiều ngang của màn?*/}
       <Box className="w-500 bg-white rounded-md flex flex-col p-12">
+        {/*Tại sao chỗ này bỏ flex thì khoảng cách giữa các phần tử co lại?*/}
         <Typography className="font-sans font-bold text-6xl mb-6">
           Todo App
         </Typography>
 
-        <Box className="my-4 flex min-w-full">
+        <Box className="my-4 flex min-w-full ">
           <TextField
             placeholder="Add your new todo"
-            className="w-full mr-2 font-sans font-normal text-2xl rounded-md "
+            className="w-full mr-2 font-sans font-normal text-2xl"
           />
           <Button
             variant="contained"
             size="large"
-            className="bg-purple-500 text-white rounded-md p-2"
+            className="bg-purple-500 p-2 min-w-14"
           >
             <AddIcon />
           </Button>
         </Box>
 
-        <Box className="my-2 min-w-full items-center">
-          <Box className="my-2 flex">
+        <Box className="my-2 min-w-full ">
+          <Box className="my-2 flex ">
             <Typography className="font-sans font-normal text-xl bg-gray-200 p-3 w-full mr-2 rounded-md">
+              {/*Tại sao cho rounded-md lên dòng 33, 34 thì phần tử con VD như typography không được hưởng ké?*/}
               Hello World
             </Typography>
-            <DeleteIcon className="bg-purple-500 text-white rounded-md size-12 p-2" />
+            <Button
+              variant="contained"
+              size="large"
+              className="bg-purple-500 p-2 min-w-14"
+            >
+              <DeleteIcon />
+            </Button>
           </Box>
 
           <Box className="my-2 flex">
             <Typography className="font-sans font-normal text-xl bg-gray-200 p-3 w-full mr-2 rounded-md">
               Grow up
             </Typography>
-            <DeleteIcon className="bg-purple-500 text-white rounded-md size-12 p-2" />
+            <Button
+              variant="contained"
+              size="large"
+              className="bg-purple-500 p-2 min-w-14"
+            >
+              <DeleteIcon />
+            </Button>
           </Box>
         </Box>
 
-        <div className="my-4 item-center flex justify-between min-w-full">
-          <Typography className="font-sans font-medium text-2xl flex-grow">
+        <div className="my-4 flex min-w-full">
+          <Typography className="font-sans font-medium text-2xl">
             You have ... pending tasks
           </Typography>
           <Button
             variant="contained"
             size="large"
-            className="bg-purple-500 rounded-md text-white font-sans font-semibold text-lg ml-5"
+            className="bg-purple-500 text-white font-sans font-semibold text-lg ml-7"
           >
             Clear All
           </Button>

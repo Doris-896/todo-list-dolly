@@ -1,16 +1,16 @@
 "use client"; //update bản mới nhất của next rồi nhưng vẫn cần đê khắc phục lỗi client component (do dùng hook useState)
 import * as React from "react";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
-import Button from "@mui/material/Button";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useState } from "react";
+import ButtonComp from "@/components/Button";
+import TextFieldComp from "@/components/TextField";
 
 export default function Home() {
   const [taskName, setTaskName] = useState(""); // State for input field
-  const [tasks, setTasks] = useState<string[]>([]); // State for storing tasks
+  const [tasks, setTasks] = useState<string[]>([]); // State for storing tasks, khai báo là truyền vào sring
 
   const addTask = () => {
     // Function to add a task to the list
@@ -41,62 +41,47 @@ export default function Home() {
 
   return (
     <main className="w-full h-full flex justify-center items-center ">
-      {" "}
       {/*Tại sao chỗ này bỏ flex thì ô sẽ kéo dài hết chiều ngang của màn?*/}
       <Box className="w-500 bg-white rounded-md flex flex-col p-12">
-        {" "}
         {/*Tại sao chỗ này bỏ flex thì khoảng cách giữa các phần tử co lại?*/}
         <Typography className="font-sans font-bold text-6xl mb-6">
           Todo App
         </Typography>
         <Box className="my-4 flex min-w-full ">
-          <TextField
-            className="w-full mr-2 font-sans font-normal text-2xl"
-            placeholder="Add your new todo"
+          <TextFieldComp
+            childrenProp={"Add your new todo"}
             value={taskName}
-            onChange={(e) => setTaskName(e.target.value)}
-            onKeyDown={handleKeyDown}
+            handleChange={(e) => setTaskName(e.target.value)}
+            handleKeyDown={handleKeyDown}
           />
 
-          <Button
-            className="bg-purple-500 p-2 min-w-14"
-            variant="contained"
-            size="large"
-            onClick={addTask}
-          >
-            <AddIcon />
-          </Button>
+          <ButtonComp 
+            childrenProp={<AddIcon />} 
+            handleClick={addTask} 
+          />
         </Box>
         {tasks.map((task, index) => (
           <Box className="my-1 flex" key={index}>
             <Typography className="font-sans font-normal text-xl bg-gray-200 p-3 w-full mr-2 rounded-md">
-              {" "}
               {/*Tại sao cho rounded-md lên dòng 33, 34 thì phần tử con VD như typography không được hưởng ké?*/}
               {task}
             </Typography>
 
-            <Button
-              className="bg-purple-500 p-2 min-w-14"
-              variant="contained"
-              size="large"
-              onClick={() => handleDelete(index)}
-            >
-              <DeleteIcon />
-            </Button>
+            <ButtonComp
+              childrenProp={<DeleteIcon />}
+              handleClick={() => handleDelete(index)}
+            />
           </Box>
         ))}
         <div className="my-4 flex min-w-full">
           <Typography className="font-sans font-medium text-2xl">
             {pendingTasksMessage}
           </Typography>
-          <Button
-            className="bg-purple-500 text-white font-sans font-semibold text-lg ml-7"
-            variant="contained"
-            size="large"
-            onClick={() => setTasks([])} // Reset tasks state to empty array
-          >
-            Clear All
-          </Button>
+          <ButtonComp
+            childrenProp={"Clear All"}
+            handleClick={() => setTasks([])}
+            additionalClassname={"ml-7 "}
+          />
         </div>
       </Box>
     </main>
